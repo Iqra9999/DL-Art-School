@@ -121,11 +121,10 @@ networks:
 path:
   pretrain_model_gpt: '../experiments/autoregressive.pth' # CHANGEME: copy this from tortoise cache
   strict_load: true
-  resume_state: /root/.cache/huggingface/hub/models--iqrabatool--Finetuned_tortoise_tts/snapshots/c056bdd8e07a0b9ac7d124b22e37a6c88a848f6b/custom_language_gpt.pth   # <-- Set this to resume from a previous training state.
-
+  resume_state: /content/models--thisserand--custom_language_gpt
 # afaik all units here are measured in **steps** (i.e. one batch of batch_size is 1 unit)
 train: # CHANGEME: ALL OF THESE PARAMETERS SHOULD BE EXPERIMENTED WITH
-  niter: 400
+  niter: 100
   warmup_iter: -1
   mega_batch_factor: 4    # <-- Gradient accumulation factor. If you are running OOM, increase this to [2,4,8].
   val_freq: 500 # TODO set this to epoch size * something

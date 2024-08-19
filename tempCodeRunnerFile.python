@@ -1,0 +1,27 @@
+
+
+from huggingface_hub import HfApi
+
+# Initialize the Hugging Face API
+api = HfApi()
+
+# Define your Hugging Face repository details
+repo_id = "iqrabatool/Data"  # Replace with your repo ID
+zip_file_path = "F:\JOB\Friedrich\Data2.zip"    # Path to your ZIP file
+
+# Define your Hugging Face API token
+hf_auth_token = "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"  # Replace with your Hugging Face token
+
+# Create the repository if it does not exist
+api.create_repo(repo_id=repo_id, token=hf_auth_token, repo_type='dataset')
+
+# Upload the ZIP file
+api.upload_file(
+    path_or_fileobj=zip_file_path,
+    path_in_repo="file.zip",  # Name of the file in the repository
+    repo_id=repo_id,
+    repo_type="dataset",
+    token=hf_auth_token
+)
+
+print("File uploaded successfully.")
