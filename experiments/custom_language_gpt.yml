@@ -121,7 +121,7 @@ networks:
 path:
   pretrain_model_gpt: '../experiments/autoregressive.pth' # CHANGEME: copy this from tortoise cache
   strict_load: true
-  #resume_state: ../experiments/train_imgnet_vqvae_stage1/training_state/0.state   # <-- Set this to resume from a previous training state.
+  resume_state: /root/.cache/huggingface/hub/models--iqrabatool--Finetuned_tortoise_tts/snapshots/c056bdd8e07a0b9ac7d124b22e37a6c88a848f6b/custom_language_gpt.pth   # <-- Set this to resume from a previous training state.
 
 # afaik all units here are measured in **steps** (i.e. one batch of batch_size is 1 unit)
 train: # CHANGEME: ALL OF THESE PARAMETERS SHOULD BE EXPERIMENTED WITH
