@@ -13,7 +13,7 @@ datasets:
   train:
     name: train_dataset
     n_workers: 8 # idk what this does
-    batch_size: 256 # This leads to ~16GB of vram usage on my 3090.
+    batch_size: 128 # This leads to ~16GB of vram usage on my 3090.
     mode: paired_voice_audio
     path: ../../dataset/train.txt
     fetcher_mode: ['lj'] # CHANGEME if your dataset isn't in LJSpeech format
@@ -30,7 +30,7 @@ datasets:
   val:
     name: val_dataset
     n_workers: 1
-    batch_size: 128 # this could be higher probably
+    batch_size: 64 # this could be higher probably
     mode: paired_voice_audio
     path: ../../dataset/val.txt
     fetcher_mode: ['lj']
@@ -119,7 +119,7 @@ networks:
       #only_alignment_head: False  # uv3/4
 
 path:
-  pretrain_model_gpt: '/models--iqrabatool--Finetuned_tortoise_tts/snapshots/60c6c90effc6c54eec7d4a11d0bc7551324dd475/custom_language_gpt_10500.pth' # CHANGEME: copy this from tortoise cache
+  pretrain_model_gpt: '/models--iqrabatool--Finetuned_tortoise_tts/snapshots/ca43e20a3e80dd0ac29d63099d6b6e79aa4aae64/custom_language_gpt_10750.pth' # CHANGEME: copy this from tortoise cache
   strict_load: true
   #resume_state: /content/models--thisserand--custom_language_gpt/snapshots/a64d5b2ef40287ef645c66e0a04d060f12735bc8/german_5000_gpt.pth
 # afaik all units here are measured in **steps** (i.e. one batch of batch_size is 1 unit)
