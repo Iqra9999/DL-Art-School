@@ -119,7 +119,7 @@ networks:
       #only_alignment_head: False  # uv3/4
 
 path:
-  pretrain_model_gpt: '/models--iqrabatool--Finetuned_tortoise_tts/snapshots/ca43e20a3e80dd0ac29d63099d6b6e79aa4aae64/custom_language_gpt_10750.pth' # CHANGEME: copy this from tortoise cache
+  pretrain_model_gpt: '../experiments/autoregressive.pth' # CHANGEME: copy this from tortoise cache
   strict_load: true
   #resume_state: /content/models--thisserand--custom_language_gpt/snapshots/a64d5b2ef40287ef645c66e0a04d060f12735bc8/german_5000_gpt.pth
 # afaik all units here are measured in **steps** (i.e. one batch of batch_size is 1 unit)
@@ -155,7 +155,7 @@ upgrades:
   # For Colab use 1 or 2 for gDrive and 5 for instance drive
   # 1 == Leave last saved checkpoint + last saved state (about 6.8 GB).
   # 2 == Leave last 2 saved checkpoints + last saved states (about 2 *~ 6.8 GB =~ 13.6 GB).
-  number_of_checkpoints_to_save: 1
+  number_of_checkpoints_to_save: 3
   # Variable: number_of_states_to_save
   # Description: Define how many states should be saved on disk (1 state =~ 3.4 GB)
   # if disable_state_saving is set as true this option will be inactive
@@ -165,4 +165,4 @@ upgrades:
   # For Colab use 1 or 2 for gDrive and 5 for instance drive
   # 1 == Leave last saved state (about 3.4 GB).
   # 2 == Leave last 2 saved states (about 2 *~ 3.4 GB =~ 6.8 GB).
-  number_of_states_to_save: 1
+  number_of_states_to_save: 3
