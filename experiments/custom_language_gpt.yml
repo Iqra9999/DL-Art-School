@@ -119,7 +119,7 @@ networks:
       #only_alignment_head: False  # uv3/4
 
 path:
-  pretrain_model_gpt: '/models--iqrabatool--Tortoise_german/snapshots/0aa741d436426c1ec13b6ac16411b5f29cd4d3e6/checkpoint_10500.pth' # CHANGEME: copy this from tortoise cache
+  pretrain_model_gpt: '/models--iqrabatool--Tortoise_german/snapshots/e77a4e90bdb693ee79687cb00648cd5fab70c555/checkpoint_11000(new).pth' # CHANGEME: copy this from tortoise cache
   strict_load: true
   #resume_state: /content/models--thisserand--custom_language_gpt/snapshots/a64d5b2ef40287ef645c66e0a04d060f12735bc8/german_5000_gpt.pth
 # afaik all units here are measured in **steps** (i.e. one batch of batch_size is 1 unit)
@@ -127,7 +127,7 @@ train: # CHANGEME: ALL OF THESE PARAMETERS SHOULD BE EXPERIMENTED WITH
   niter: 5000
   warmup_iter: -1
   mega_batch_factor: 4   #(earlier it was 4) # <-- Gradient accumulation factor. If you are running OOM, increase this to [2,4,8].
-  val_freq: 500 # TODO set this to epoch size * something
+  val_freq: 1000 # TODO set this to epoch size * something
 
   default_lr_scheme: MultiStepLR
   gen_lr_steps: [500, 1000, 1400, 1800] #[50000, 100000, 140000, 180000]
@@ -142,7 +142,7 @@ logger:
   print_freq: 100 # TODO: set this to epoch size
   save_checkpoint_freq: 250 # CHANGEME: especially you should increase this it's really slow
   visuals: [gen, mel] #TODO: figure this out
-  visual_debug_rate: 500
+  visual_debug_rate: 1000
   is_mel_spectrogram: true
   disable_state_saving: False # CHANGEME if you plan to halt training inbetween
 
