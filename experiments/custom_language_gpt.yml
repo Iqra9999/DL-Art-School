@@ -119,7 +119,7 @@ networks:
       #only_alignment_head: False  # uv3/4
 
 path:
-  pretrain_model_gpt: '/models--iqrabatool--Tortoise_german/snapshots/e1a9e9b40195bc64da7428ff9d6073dac9d025d8/checkpoint_11500_new.pth' # CHANGEME: copy this from tortoise cache
+  pretrain_model_gpt: '/models--iqrabatool--Tortoise_german/snapshots/99a32a2cffdc70adc0fe21ba8f2011abb171bd17/checkpoint_13000_new.pth' # CHANGEME: copy this from tortoise cache
   strict_load: true
   #resume_state: /content/models--thisserand--custom_language_gpt/snapshots/a64d5b2ef40287ef645c66e0a04d060f12735bc8/german_5000_gpt.pth
 # afaik all units here are measured in **steps** (i.e. one batch of batch_size is 1 unit)
